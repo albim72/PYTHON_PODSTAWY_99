@@ -51,3 +51,12 @@ i = 1
 i+=1 
 i = i+1
 print(i)
+kr = "lajkonik"
+print(kr)
+
+print(kr[0])
+print(kr[1])
+print(kr[2:5])
+print(kr[2:])
+print(kr[:5])
+print(kr[-1])
