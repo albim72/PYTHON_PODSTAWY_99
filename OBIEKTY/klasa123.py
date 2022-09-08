@@ -31,3 +31,20 @@ class TrzeciaKlasa(DrugaKlasa):
 
     def sumuj(self):
         return self.a + self.b + self.c + self.d
+
+    print("____________klasa pierwsza______________")
+pk = PierwszaKlasa(3,6)
+pk.print_ab()
+print("____________klasa druga________________")
+dk = DrugaKlasa(45,2,8)
+dk.print_ab()
+dk.print_abc()
+print(f"suma a+b+c = {dk.sumuj()}")
+
+print("____________klasa trzecia_______________")
+
+tk = TrzeciaKlasa(6,17,8,19)
+tk.print_ab()
+tk.print_abc()
+tk.print_abcd()
+print(f"suma a+b+c+d = {tk.sumuj()}")
