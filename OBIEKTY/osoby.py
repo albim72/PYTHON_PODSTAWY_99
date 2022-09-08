@@ -58,3 +58,19 @@ e1.print_osoba()
 e1.print_pracownik()
 print(e1.wiekza10lat())
 print(f'czy osoba jest pracownikiem? {e1.czypracownik()}')
+
+
+class Sport:
+    
+    def __init__(self,dyscyplina,lataupr,bestwynik):
+        self.dycyplina = dyscyplina
+        self.lataupr = lataupr
+        self.bestwynik = bestwynik
+        
+    def infosport(self):
+        print(f"dycyplina: {self.dycyplina}, lata uprawiania: {self.lataupr}, życiówka: {self.bestwynik}.")
+        
+        
+class Ekstra:
+    pass
+
