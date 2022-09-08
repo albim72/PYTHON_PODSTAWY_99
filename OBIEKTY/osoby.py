@@ -20,10 +20,10 @@ class Osoba:
 
     def czypracownik(self) -> bool:
         return False
-    
+
     def bmi(self):
         return self.waga/(self.wzrost/100)**2
-    
+
     def opisbmi(self):
         if self.bmi() < 18.5:
             return "niedowaga"
@@ -34,12 +34,22 @@ class Osoba:
         else:
             return "otyłość"
 
+    def policz_ppm(self,plec):
+        if plec == "k":
+            return 655.1 + 9.563*self.waga + 1.85*self.wzrost - 4.676*self.wiek
+        elif plec == "m":
+            return 66.5 + 13.75 * self.waga + 5.003 * self.wzrost - 6.775 * self.wiek
+        else:
+            return "zły wybór"
+
 
 p1 = Osoba("Jan",45,112,174)
 p1.print_osoba()
 print(p1.wiekza10lat())
 print(f'czy osoba jest pracownikiem? {p1.czypracownik()}')
 print(f'bmi ciała wynosi: {p1.bmi():.2f}, opis: {p1.opisbmi()}')
+print(f"zapotrzebowanie energetyczne: {p1.policz_ppm('m')} kcal")
+
 print("______________________________________________________")
 
 p2 = Osoba("Olga",24,54,168)
@@ -47,6 +57,7 @@ p2.kolor_oczu = "niebieskie"
 p2.print_osoba()
 print(p2.wiekza10lat())
 print(f'czy osoba jest pracownikiem? {p2.czypracownik()}')
+
 
 class Pracownik(Osoba):
 
@@ -74,16 +85,16 @@ print(f'czy osoba jest pracownikiem? {e1.czypracownik()}')
 
 
 class Sport:
-    
+
     def __init__(self,dyscyplina,lataupr,bestwynik):
         self.dycyplina = dyscyplina
         self.lataupr = lataupr
         self.bestwynik = bestwynik
-        
+
     def infosport(self):
         print(f"dycyplina: {self.dycyplina}, lata uprawiania: {self.lataupr}, życiówka: {self.bestwynik}.")
-        
-        
+
+
 class Ekstra:
     pass
 
@@ -134,3 +145,6 @@ s3.infosport()
 print(s3.wiekza10lat())
 print(f'czy osoba jest pracownikiem? {s3.czypracownik()}')
 print(f'bmi ciała wynosi: {s3.bmi():.2f}, opis: {s3.opisbmi()}')
+
+
+
