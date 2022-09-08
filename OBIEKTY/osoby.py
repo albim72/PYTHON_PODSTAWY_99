@@ -74,3 +74,49 @@ class Sport:
 class Ekstra:
     pass
 
+class Student(Pracownik,Sport,Ekstra):
+
+    #konstruktor z wielodziedziczeniem
+    def __init__(self,imie,wiek,waga,wzrost,nr_studenta,kierunek,rok,
+                 firma="",stanowisko="",latapracy="",wynagrodzenie="",dyscyplina="",lataupr="",bestwynik=""):
+        Pracownik.__init__(self,imie,wiek,waga,wzrost,firma,stanowisko,latapracy,wynagrodzenie)
+        Sport.__init__(self,dyscyplina,lataupr,bestwynik)
+        self.nr_studenta = nr_studenta
+        self.kierunek = kierunek
+        self.rok = rok
+
+    def print_student(self):
+        print(f"dane studenta nr {self.nr_studenta}, kierunek: {self.kierunek}, rok studiów: {self.rok}.")
+
+    def czypracownik(self) -> bool:
+        return self.firma != ""
+
+
+print("______________________________________________________")
+
+s1 = Student("Olaf",22,77,177,34534,"budowa mostów",3)
+s1.print_osoba()
+s1.print_student()
+print(s1.wiekza10lat())
+print(f'czy osoba jest pracownikiem? {s1.czypracownik()}')
+
+print("______________________________________________________")
+
+s2 = Student("Paula",23,63,173,675664,"ekonomia",4,"XYZ","sekretarka",1,2500)
+s2.print_osoba()
+s2.print_student()
+s2.print_pracownik()
+print(s2.wiekza10lat())
+print(f'czy osoba jest pracownikiem? {s2.czypracownik()}')
+
+print("______________________________________________________")
+
+#stwórz instancję Student -> studenta który jest osobą i stuentem oraz sportowcem (ale nie pracownikiem)
+#uruchom dostępne metody
+
+s3 = Student("Robert",22,88,182,54545,"informatyka",3,dyscyplina="biegi ultra", lataupr=5, bestwynik="102km 18h15min")
+s3.print_osoba()
+s3.print_student()
+s3.infosport()
+print(s3.wiekza10lat())
+print(f'czy osoba jest pracownikiem? {s3.czypracownik()}')
