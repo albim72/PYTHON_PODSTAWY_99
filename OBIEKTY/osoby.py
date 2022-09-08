@@ -39,7 +39,7 @@ p1 = Osoba("Jan",45,112,174)
 p1.print_osoba()
 print(p1.wiekza10lat())
 print(f'czy osoba jest pracownikiem? {p1.czypracownik()}')
-
+print(f'bmi ciała wynosi: {p1.bmi():.2f}, opis: {p1.opisbmi()}')
 print("______________________________________________________")
 
 p2 = Osoba("Olga",24,54,168)
@@ -133,3 +133,4 @@ s3.print_student()
 s3.infosport()
 print(s3.wiekza10lat())
 print(f'czy osoba jest pracownikiem? {s3.czypracownik()}')
+print(f'bmi ciała wynosi: {s3.bmi():.2f}, opis: {s3.opisbmi()}')
