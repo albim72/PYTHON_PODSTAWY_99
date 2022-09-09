@@ -2,9 +2,10 @@
 #double -> max -> 1.8E+308 (10**308)
 #n?? 171
 import sys
+from NegativeError import NegativeErrorFactorial
 def silnia(n):
     if n<0:
-        raise ValueError("silnia niezdefiniowana dla liczb ujemnych!")
+        raise NegativeErrorFactorial(n)
     wynik = 1
     for i in range(1,n+1):
         wynik *= i
@@ -23,7 +24,7 @@ try:
     sys.setrecursionlimit(100000)
     print(f"silnia z {n} wynosi: {silnia(n)}")
     print(f"silnia rekurencyjna z {n} wynosi: {silnia_rek(n)}")
-except ValueError as d:
+except NegativeErrorFactorial as d:
     print(d)
 except:
     print("totalnie nieznany błąd!")
