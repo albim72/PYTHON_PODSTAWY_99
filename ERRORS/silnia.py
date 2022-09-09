@@ -1,7 +1,7 @@
 #n! = 1*2*...*n, gdzie należy do liczb całkowitych nieujemnych
 #double -> max -> 1.8E+308 (10**308)
 #n?? 171
-
+import sys
 def silnia(n):
     if n<0:
         raise ValueError("silnia niezdefiniowana dla liczb ujemnych!")
@@ -20,6 +20,7 @@ def silnia_rek(n):
 
 try:
     n = int(input("podaj wartość n argumentu funkcji silnia: "))
+    sys.setrecursionlimit(100000)
     print(f"silnia z {n} wynosi: {silnia(n)}")
     print(f"silnia rekurencyjna z {n} wynosi: {silnia_rek(n)}")
 except ValueError as d:
