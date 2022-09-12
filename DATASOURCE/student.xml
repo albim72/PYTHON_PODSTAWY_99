@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<parent1 prot_nr = "57">
+    <child1 student_name = "Jacek">Wystarczające zaangażowanie....</child1>
+    <child2 student_name = "Olga">Brak zaangażlowania....</child2>
+    <child3 student_name = "Nadia">Doskonale, bardzo ciężka prac cały semestr....</child3>
+</parent1>
